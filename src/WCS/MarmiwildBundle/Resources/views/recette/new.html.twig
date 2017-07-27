@@ -1,0 +1,87 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+
+
+    <div class="row" style="margin-bottom: 10px">
+        <div class="col-sm-offset-1 col-sm-10">
+                <h1>Ajouter votre recette</h1>
+            <div class="col-sm-12">
+                {{ form_start(form, {'action': path('recette_new')}) }}
+
+            <div class="row">
+                <div class="col-md-8">
+                    {{ form_label(form.nom, 'Nom', {'label_attr': {'class': 'col-md-2 control-label'}}) }}
+                    <div class="col-md-8 input-group">
+                        {{ form_widget(form.nom, { 'attr': {'class': 'form-control', 'placeholder':'Nom'}}) }}
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-8">
+                    {{ form_label(form.type, 'Type', {'label_attr': {'class': 'col-md-2 control-label'}}) }}
+                    <div class="col-md-8 input-group">
+                        {{ form_widget(form.type, { 'attr': {'class': 'form-control', 'placeholder':'Temps'}}) }}
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-8">
+                     {{ form_label(form.imageFile, 'Photo', {'label_attr': {'class': 'col-md-2 control-label'}}) }}
+                      <div class="col-md-8 input-group">
+                         {{ form_widget(form.imageFile, { 'attr': {'class': 'form-control', 'placeholder':'Photo'}}) }}
+                       </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-8">
+                    {{ form_label(form.personne, 'Nombre de Personne', {'label_attr': {'class': 'col-md-4 control-label'}}) }}
+                    <div class="col-md-6 input-group">
+                        {{ form_widget(form.personne, { 'attr': {'class': 'form-control', 'placeholder':'Personnes'}}) }}
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-8">
+                    {{ form_label(form.temps, 'Temps', {'label_attr': {'class': 'col-md-2 control-label'}}) }}
+                    <div class="col-md-8 input-group">
+                        {{ form_widget(form.temps, { 'attr': {'class': 'form-control', 'placeholder':'Temps'}}) }}
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-8">
+                    {{ form_label(form.ingredient, 'Ingredients', {'label_attr': {'class': 'col-md-2 control-label'}}) }}
+                    <div class="col-md-8 input-group">
+                        {{ form_widget(form.ingredient, { 'attr': {'class': 'form-control', 'placeholder':'Ingredients'}}) }}
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-8">
+                    {{ form_label(form.preparation, 'Preparation', {'label_attr': {'class': 'col-md-2 control-label'}}) }}
+                    <div class="col-md-8 input-group">
+                        {{ form_widget(form.preparation, { 'attr': {'class': 'form-control', 'placeholder':'Preparation'}}) }}
+                    </div>
+                </div>
+            </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-offset-5 col-md-2">
+                            {{ form_widget(form.submit, { 'attr': {'class': 'btn btn-primary'}}) }}
+                    </div>
+                </div>
+            </div>
+    </div>
+    </div>
+
+    {{ form_end(form) }}
+
+{% endblock %}

@@ -1,0 +1,71 @@
+{% extends 'base.html.twig' %}
+
+
+
+
+
+{% block body %}
+
+
+<div class="container">
+    <h1>Liste des Recettes</h1>
+
+
+    <div class="row">
+        {% for recette in recettes %}
+        <div class="col-md-3 col-sm-6 col-xs-12">
+            <div class="card-container">
+                <div class="card">
+                    <div class="front">
+                        <div class="cover">
+                            <img src="{{ vich_uploader_asset(recette, 'imageFile') }}"/>
+                        </div>
+
+                        <div class="content">
+                            <div class="main">
+                                <h3 class="name">{{ recette.nom }}</h3>
+                                <p class="email">Pour {{ recette.personne }} Personnes</p>
+                                <p class="email">{% if recette.temps %}{{ recette.temps }} minutes{% endif %}</p>
+
+                                    <h4 class="text-center">Ingrédients</h4>
+                                    <span class="text-center" >{{ recette.ingredient }}</span>
+                            </div>
+                                    {#<td><a href="{{ path('recette_show', { 'id': recette.id }) }}">{{ recette.id }}</a></td>#}
+                            <div class="footer">
+                                <i class="fa fa-mail-forward"></i>
+                            </div>
+                        </div>
+                    </div> <!-- end front panel -->
+
+                    <div class="back">
+                            <div class="content">
+                                <div class="header">
+                                    <h5 class="motto">{{ recette.nom }}</h5>
+                                </div>
+                                    <div class="main">
+                                        <h4 class="text-center">Préparation</h4>
+                                        <span class="text-center" >{{ recette.preparation }} </span>
+                                    </div>
+                                <div class="button" style="margin-top:110px;">
+                                    <button class="btn btn-success">
+                                        <a href="{{ path('recette_edit', { 'id': recette.id }) }}">Modifier</a>
+                                    </button>
+                                    <button class="btn btn-primary">
+                                        <a href="{{ path('recette_show', { 'id': recette.id }) }}">Recette</a>
+                                    </button>
+                                    <button class="btn btn-danger">
+                                        <a href="{{ path('recette_delete', { 'id': recette.id }) }}">Effacer</a>
+                                    </button>
+                                </div>
+                            </div>
+                    </div>
+                </div> <!-- end back panel -->
+            </div> <!-- end card -->
+        </div>
+
+        {% endfor %}
+    </div>
+
+</div>
+
+{% endblock %}

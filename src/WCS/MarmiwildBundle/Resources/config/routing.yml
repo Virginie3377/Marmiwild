@@ -1,0 +1,7 @@
+wcs_marmiwild_recette:
+    resource: "@WCSMarmiwildBundle/Resources/config/routing/recette.yml"
+    prefix:   /recette
+
+wcs_marmiwild_homepage:
+    path:     /
+    defaults: { _controller: WCSMarmiwildBundle:Default:index }

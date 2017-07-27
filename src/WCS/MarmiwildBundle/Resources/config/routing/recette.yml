@@ -1,0 +1,39 @@
+recette_index:
+    path:     /
+    defaults: { _controller: "WCSMarmiwildBundle:Recette:index" }
+    methods:  GET
+
+recette_show:
+    path:     /{id}/show
+    defaults: { _controller: "WCSMarmiwildBundle:Recette:show" }
+    methods:  GET
+
+recette_new:
+    path:     /new
+    defaults: { _controller: "WCSMarmiwildBundle:Recette:new" }
+    methods:  [GET, POST]
+
+recette_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "WCSMarmiwildBundle:Recette:edit" }
+    methods:  [GET, POST]
+
+recette_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "WCSMarmiwildBundle:Recette:delete" }
+    methods:  GET
+
+recette_search:
+    path:     /search
+    defaults: { _controller: "WCSMarmiwildBundle:Recette:search" }
+    methods:  POST
+
+recette_filter:
+    path:     /filter/{type}
+    defaults: { _controller: "WCSMarmiwildBundle:Recette:recetteType" }
+    methods:  GET
+
+recette_personne:
+    path:     /nbrepersonne
+    defaults: { _controller: "WCSMarmiwildBundle:Recette:recetteNbrepersonne" }
+    methods:  POST

@@ -1,0 +1,101 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+  {#  <h1>Recette edit</h1>
+
+    {{ form_start(edit_form) }}
+
+    {{ form_widget(edit_form) }}
+        <input type="submit" value="Edit" />
+    {{ form_end(edit_form) }}
+
+    <ul>
+        <li>
+            <a href="{{ path('recette_index') }}">Back to the list</a>
+        </li>
+
+    </ul>#}
+
+
+
+
+    <div class="row" style="margin-bottom: 10px">
+        <div class="col-sm-offset-1 col-sm-10">
+            <h1>Modifier votre recette</h1>
+            <div class="col-sm-12">
+                {{ form_start(edit_form, {'action': path('recette_edit', {'id':recette.id })}) }}
+
+                <div class="row">
+                    <div class="col-md-8">
+                        {{ form_label(edit_form.nom, 'Nom', {'label_attr': {'class': 'col-md-2 control-label'}}) }}
+                        <div class="col-md-8 input-group">
+                            {{ form_widget(edit_form.nom, { 'attr': {'class': 'form-control', 'placeholder':'Nom'}}) }}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-8">
+                        {{ form_label(edit_form.type, 'Type', {'label_attr': {'class': 'col-md-2 control-label'}}) }}
+                        <div class="col-md-8 input-group">
+                            {{ form_widget(edit_form.type, { 'attr': {'class': 'form-control', 'placeholder':'Temps'}}) }}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-8">
+                        {{ form_label(edit_form.imageFile, 'Photo', {'label_attr': {'class': 'col-md-2 control-label'}}) }}
+                        <div class="col-md-8 input-group">
+                            {{ form_widget(edit_form.imageFile, { 'attr': {'class': 'form-control', 'placeholder':'Photo'}}) }}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-8">
+                        {{ form_label(edit_form.personne, 'Nombre de Personne', {'label_attr': {'class': 'col-md-4 control-label'}}) }}
+                        <div class="col-md-6 input-group">
+                            {{ form_widget(edit_form.personne, { 'attr': {'class': 'form-control', 'placeholder':'Personnes'}}) }}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-8">
+                        {{ form_label(edit_form.temps, 'Temps', {'label_attr': {'class': 'col-md-2 control-label'}}) }}
+                        <div class="col-md-8 input-group">
+                            {{ form_widget(edit_form.temps, { 'attr': {'class': 'form-control', 'placeholder':'Temps'}}) }}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-8">
+                        {{ form_label(edit_form.ingredient, 'Ingredients', {'label_attr': {'class': 'col-md-2 control-label'}}) }}
+                        <div class="col-md-8 input-group">
+                            {{ form_widget(edit_form.ingredient, { 'attr': {'class': 'form-control', 'placeholder':'Ingredients'}}) }}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-8">
+                        {{ form_label(edit_form.preparation, 'Preparation', {'label_attr': {'class': 'col-md-2 control-label'}}) }}
+                        <div class="col-md-8 input-group">
+                            {{ form_widget(edit_form.preparation, { 'attr': {'class': 'form-control', 'placeholder':'Preparation'}}) }}
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-md-offset-5 col-md-2">
+                        {{ form_widget(edit_form.submit, { 'attr': {'class': 'btn btn-primary'}}) }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{ form_end(edit_form) }}
+{% endblock %}
